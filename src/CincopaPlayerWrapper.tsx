@@ -1,11 +1,11 @@
-import React, {
+import {
   useEffect,
   useState,
   useRef,
   forwardRef,
   useImperativeHandle,
 } from 'react';
-import { View, ActivityIndicator, Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 import CincopaPlayer from './CincopaPlayer';
 import type { CincopaPlayerProps, SubtitleTrack } from './CincopaTypes';
 import { CincopaVideoAnalyticsService } from './CincopaVideoAnalyticsService';
@@ -54,7 +54,6 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
     ref
   ) => {
     const [sourceUri, setSourceUri] = useState<string | null>(null);
-    const [loading, setLoading] = useState(true);
     const [metadata, setMetadata] = useState<VideoMetadata | null>(null);
     const analyticsRef = useRef<CincopaVideoAnalyticsService | null>(null);
     const playerRef = useRef<any>(null);
@@ -92,7 +91,6 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
           });
         })
         .catch(() => setMetadata(null))
-        .finally(() => setLoading(false));
     }, [rid]);
 
     useEffect(() => {
@@ -130,12 +128,15 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
       const parts = durationStr.split(':').map((p) => parseFloat(p) || 0);
       let ms = 0;
 
-      if (parts && parts.length && parts.length === 3) {
-        ms = parts[0] * 3600 * 1000 + parts[1] * 60 * 1000 + parts[2] * 1000;
+      if (parts.length === 3) {
+        ms =
+          (parts[0] ?? 0) * 3600 * 1000 +
+          (parts[1] ?? 0) * 60 * 1000 +
+          (parts[2] ?? 0) * 1000;
       } else if (parts.length === 2) {
-        ms = parts[0] * 60 * 1000 + parts[1] * 1000;
+        ms = (parts[0] ?? 0) * 60 * 1000 + (parts[1] ?? 0) * 1000;
       } else if (parts.length === 1) {
-        ms = parts[0] * 1000;
+        ms = (parts[0] ?? 0) * 1000;
       }
 
       return ms;
@@ -152,15 +153,6 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
       seekTo: (seconds: number) => playerRef.current?.seekTo(seconds),
       getMetadata: () => metadata,
     }));
-
-    if (loading) {
-      return (
-        <View style={styles.loading}>
-          <ActivityIndicator size="large" color="#32a852" />
-          <Text>Loading video...</Text>
-        </View>
-      );
-    }
 
     if (!sourceUri) {
       return <Text style={{ color: 'red' }}>Failed to get source</Text>;
@@ -206,9 +198,5 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
     );
   }
 );
-
-const styles = StyleSheet.create({
-  loading: { alignItems: 'center', justifyContent: 'center', height: 200 },
-});
 
 export default CincopaPlayerWrapper;

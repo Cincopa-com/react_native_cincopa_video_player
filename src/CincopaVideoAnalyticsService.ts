@@ -126,7 +126,7 @@ export class CincopaVideoAnalyticsService {
     return buf;
   }
 
-  private async sendUpdate(force = false) {
+  public async sendUpdate(force = false) {
     if (!force && Object.keys(this.heatmap).length === 0) return;
 
     const durSec = Math.floor((this.durationInMs ?? 0) / 1000);

@@ -1,5 +1,5 @@
 {
-  "name": "cincopa-player-example",
+  "name": "react-native-cincopa-video-player-example",
   "version": "0.0.2",
   "private": true,
   "scripts": {
@@ -11,13 +11,12 @@
   },
   "dependencies": {
     "@react-native/new-app-screen": "0.81.1",
-    "cincopa-player": "workspace:*",
     "react": "19.1.0",
     "react-native": "0.81.1",
+    "react-native-cincopa-video-player": "workspace:*",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-video": "^6.17.0",
-    "react-native-video-controls": "^2.8.1",
-    "react-native-video-player": "^0.16.3"
+    "react-native-video-controls": "^2.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

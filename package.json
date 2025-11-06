@@ -1,7 +1,7 @@
 {
-  "name": "cincopa-player",
-  "version": "0.0.1",
-  "description": "Cincopa Player",
+  "name": "react-native-cincopa-video-player",
+  "version": "0.0.2",
+  "description": "Cincopa Player for React Native",
   "main": "./lib/module/index.js",
   "exports": {
     ".": {
@@ -31,7 +31,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace cincopa-player-example",
+    "example": "yarn workspace react-native-cincopa-video-player-example",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -44,19 +44,22 @@
     "ios",
     "android",
     "cincopa",
+    "react-native-cincopa-player",
     "cincopa-player",
+    "video-player",
+    "video",
     "player"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cincopa-com/cincopa-player.git"
+    "url": "git+https://github.com/Cincopa-com/react-native-cincopa-video-player.git"
   },
   "author": "Cincopa (https://github.com/Cincopa-com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Cincopa-com/cincopa-player/issues"
+    "url": "https://github.com/Cincopa-com/react-native-cincopa-video-player/issues"
   },
-  "homepage": "https://github.com/Cincopa-com/cincopa-player#readme",
+  "homepage": "https://github.com/Cincopa-com/react-native-cincopa-video-player#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -80,17 +83,18 @@
     "eslint-plugin-prettier": "^5.5.4",
     "jest": "^29.7.0",
     "prettier": "^3.6.2",
+    "react-native": "^0.82.1",
     "react-native-builder-bob": "^0.40.13",
+    "react-native-video-controls": "^2.8.1",
     "release-it": "^19.0.4",
     "turbo": "^2.5.6",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
     "react-native-video": "*",
-    "react-native-video-controls": "*",
-    "react-native-video-player": "*"
+    "react-native-video-controls": "*"
   },
   "workspaces": [
     ".",

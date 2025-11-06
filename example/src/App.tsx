@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { AppCincopaPlayer } from 'cincopa-player';
+import { AppCincopaPlayer } from 'react-native-cincopa-video-player';
 
 export default function App() {
   const firstUserData = {

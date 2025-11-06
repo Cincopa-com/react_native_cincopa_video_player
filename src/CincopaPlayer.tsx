@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, Dimensions, Platform, StatusBar } from 'react-native';
+import type { ViewStyle } from 'react-native';
 import VideoPlayer from 'react-native-video-controls';
 import type { CincopaPlayerProps } from './CincopaTypes';
 
@@ -67,22 +68,24 @@ const CincopaPlayer = React.forwardRef<any, CincopaPlayerProps>(
           ? poster.source.uri
           : undefined;
 
-    const containerStyle = isFullscreen
-      ? {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: windowWidth,
-          height: windowHeight,
-          zIndex: 999,
-          backgroundColor: 'black',
-          paddingBottom: Platform.OS === 'ios' ? 20 : 10,
-        }
-      : {
-          width: windowWidth,
-          height: windowWidth / (ratio || 16 / 9),
-          backgroundColor: 'black',
-        };
+    const containerStyle = (
+      isFullscreen
+        ? {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: windowWidth,
+            height: windowHeight,
+            zIndex: 999,
+            backgroundColor: 'black',
+            paddingBottom: Platform.OS === 'ios' ? 20 : 10,
+          }
+        : {
+            width: windowWidth,
+            height: windowWidth / (ratio || 16 / 9),
+            backgroundColor: 'black',
+          }
+    ) as ViewStyle;
 
     return (
       <View style={containerStyle}>

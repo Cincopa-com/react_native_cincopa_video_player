@@ -1,16 +1,15 @@
 # Cincopa Player for React Native
 
 
-
-[![npm version](https://img.shields.io/npm/v/cincopa-player?style=flat-square)](https://www.npmjs.com/package/cincopa-player)
-[![npm downloads](https://img.shields.io/npm/dm/cincopa-player?style=flat-square)](https://www.npmjs.com/package/cincopa-player)
-[![License](https://img.shields.io/github/license/davitHarut/cincopa-player?style=flat-square)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/react-native-cincopa-video-player?style=flat-square)](https://www.npmjs.com/package/react-native-cincopa-video-player)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-cincopa-video-player?style=flat-square)](https://www.npmjs.com/package/react-native-cincopa-video-player)
+[![License](https://img.shields.io/github/license/Cincopa-com/react-native-cincopa-video-player?style=flat-square)](LICENSE)
 
 ---
 
 ## ⭐️ Overview
 
-The `cincopa-player` package provides a native React Native component designed to seamlessly integrate the Cincopa media player (video, audio, galleries) into your mobile applications for both iOS and Android.
+The `react-native-cincopa-video-player` package provides a native React Native component designed to seamlessly integrate the Cincopa media player (video, audio, galleries) into your mobile applications for both iOS and Android.
 
 ## ✨ Features
 
@@ -26,10 +25,10 @@ Install the package using either `npm` or `yarn`:
 
 ```bash
 # Using npm
-npm install cincopa-player
+npm install react-native-cincopa-video-player
 
 # Using yarn
-yarn add cincopa-player
+yarn add react-native-cincopa-video-player
 ```
 
 ### Native Setup (iOS)
@@ -48,7 +47,7 @@ Import the `AppCincopaPlayer` component and use it, passing the mandatory `rid` 
 ```ts
 import React from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
-import { AppCincopaPlayer } from 'cincopa-player';
+import { AppCincopaPlayer } from 'react-native-cincopa-video-player';
 
 export default function App() {
   // User data can be used for analytics or content personalization
