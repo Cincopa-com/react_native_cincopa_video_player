@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Cincopa Player for React Native
 
 
@@ -123,7 +122,3 @@ For assistance, contact [support@cincopa.com](mailto:support@cincopa.com)
 ## 📄 License
 
 MIT © Cincopa
-=======
-# react_native_cicnopa_video_player
-Cincopa Video Player for React Native
->>>>>>> 38aee685feaec955e4f6c9d654e39af2d8bb26b5
