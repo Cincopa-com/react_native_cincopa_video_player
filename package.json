@@ -1,6 +1,6 @@
 {
   "name": "react-native-cincopa-video-player",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cincopa Player for React Native",
   "main": "./lib/module/index.js",
   "exports": {
@@ -87,7 +87,7 @@
     "react-native-builder-bob": "^0.40.13",
     "react-native-video-controls": "^2.8.1",
     "release-it": "^19.0.4",
-    "turbo": "2.6.0",
+    "turbo": "^2.6.1",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
