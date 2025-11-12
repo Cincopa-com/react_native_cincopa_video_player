@@ -90,7 +90,7 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
             subtitles: subs,
           });
         })
-        .catch(() => setMetadata(null))
+        .catch(() => setMetadata(null));
     }, [rid]);
 
     useEffect(() => {

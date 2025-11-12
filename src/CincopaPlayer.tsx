@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Dimensions, Platform, StatusBar } from 'react-native';
 import type { ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import VideoPlayer from 'react-native-video-controls';
 import type { CincopaPlayerProps } from './CincopaTypes';
 
@@ -96,7 +97,7 @@ const CincopaPlayer = React.forwardRef<any, CincopaPlayerProps>(
             type: source.type === 'hls' ? 'm3u8' : 'mp4',
           }}
           poster={{ source: { uri: posterUri }, resizeMode: 'cover' }}
-          videoStyle={{width: '100%', height: '100%' }}
+          videoStyle={styles.video}
           resizeMode="contain"
           disableBack
           controlTimeout={5000}
@@ -125,6 +126,14 @@ const CincopaPlayer = React.forwardRef<any, CincopaPlayerProps>(
         />
       </View>
     );
+  }
+);
+
+const styles = StyleSheet.create({
+  video: {
+    width: '100%',
+    height: '100%',
+  },
 });
 
 export default CincopaPlayer;

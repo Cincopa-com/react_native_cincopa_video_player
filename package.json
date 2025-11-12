@@ -1,6 +1,6 @@
 {
   "name": "react-native-cincopa-video-player",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cincopa Player for React Native",
   "main": "./lib/module/index.js",
   "exports": {
