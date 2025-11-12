@@ -5,7 +5,7 @@ import {
   forwardRef,
   useImperativeHandle,
 } from 'react';
-import { Text } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import CincopaPlayer from './CincopaPlayer';
 import type { CincopaPlayerProps, SubtitleTrack } from './CincopaTypes';
 import { CincopaVideoAnalyticsService } from './CincopaVideoAnalyticsService';
@@ -155,7 +155,7 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
     }));
 
     if (!sourceUri) {
-      return <Text style={{ color: 'red' }}>Failed to get source</Text>;
+      return <Text style={styles.failed}>Failed to get source</Text>;
     }
 
     const props: CincopaPlayerProps = {
@@ -198,5 +198,11 @@ const CincopaPlayerWrapper = forwardRef<CincopaPlayerRef, WrapperProps>(
     );
   }
 );
+
+const styles = StyleSheet.create({
+  failed: {
+    color: 'red',
+  },
+});
 
 export default CincopaPlayerWrapper;
